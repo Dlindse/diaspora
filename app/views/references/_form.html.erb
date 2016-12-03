@@ -1,0 +1,16 @@
+<%= simple_form_for(@reference) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.association :work %>
+    <%= f.input :page %>
+    <%= f.input :line %>
+    <%= f.association :genre %>
+    <%= f.input :excerpt %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

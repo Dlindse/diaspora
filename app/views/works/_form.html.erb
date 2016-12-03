@@ -1,0 +1,15 @@
+<%= simple_form_for(@work) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.association :author %>
+    <%= f.input :published %>
+    <%= f.input :edition %>
+    <%= f.input :collection %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
