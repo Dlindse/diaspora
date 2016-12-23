@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223034025) do
+ActiveRecord::Schema.define(version: 20161223060624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20161223034025) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "from"
+    t.string   "influence"
     t.index ["genre_id"], name: "index_references_on_genre_id", using: :btree
     t.index ["work_id"], name: "index_references_on_work_id", using: :btree
   end
