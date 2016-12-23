@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  title: MyString
+  period: MyString
+  circa: MyString
+
+two:
+  author: MyString
+  title: MyString
+  period: MyString
+  circa: MyString

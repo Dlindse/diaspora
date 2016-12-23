@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Influences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Period</th>
+      <th>Circa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @influences.each do |influence| %>
+      <tr>
+        <td><%= influence.author %></td>
+        <td><%= influence.title %></td>
+        <td><%= influence.period %></td>
+        <td><%= influence.circa %></td>
+        <td><%= link_to 'Show', influence %></td>
+        <td><%= link_to 'Edit', edit_influence_path(influence) %></td>
+        <td><%= link_to 'Destroy', influence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Influence', new_influence_path %>
