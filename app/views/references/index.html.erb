@@ -11,7 +11,7 @@
       <th>Line</th>
       <th>Genre</th>
       <th>Excerpt</th>
-      <th>From</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,7 +25,7 @@
         <td><%= reference.line %></td>
         <td><%= reference.genre.name %></td>
         <td><%= reference.excerpt %></td>
-        <td><%= reference.from %></td>
+        
         <td><%= link_to 'Show', reference %></td>
         <td><%= link_to 'Edit', edit_reference_path(reference) %></td>
         <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
