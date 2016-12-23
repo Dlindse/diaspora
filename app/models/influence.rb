@@ -1,2 +1,0 @@
-class Influence < ApplicationRecord
-end

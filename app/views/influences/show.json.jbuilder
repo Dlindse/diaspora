@@ -1,1 +1,0 @@
-json.partial! "influences/influence", influence: @influence
