@@ -1,5 +1,5 @@
 class Reference < ApplicationRecord
   belongs_to :work
   belongs_to :genre
-  belongs_to :influences
+  belongs_to :influence
 end
