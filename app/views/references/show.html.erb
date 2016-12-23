@@ -30,5 +30,11 @@
   <%= @reference.excerpt %>
 </p>
 
+<p>
+<strong>From:</strong>
+<%= @reference.from %>
+</p>
+
 <%= link_to 'Edit', edit_reference_path(@reference) %> |
-<%= link_to 'Back', references_path %>
+<%= link_to 'Back', references_path %> |
+<%= link_to 'New Reference', new_reference_path %><br>
