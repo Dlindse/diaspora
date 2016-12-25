@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: MyString
+  pubdate: 2016-12-25
+  period: MyString
+
+two:
+  title: MyString
+  author: MyString
+  pubdate: 2016-12-25
+  period: MyString

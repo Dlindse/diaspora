@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :influences
   resources :references
   resources :works
   resources :genres

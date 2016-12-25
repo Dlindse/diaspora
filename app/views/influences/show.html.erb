@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @influence.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @influence.author %>
+</p>
+
+<p>
+  <strong>Pubdate:</strong>
+  <%= @influence.pubdate %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @influence.period %>
+</p>
+
+<%= link_to 'Edit', edit_influence_path(@influence) %> |
+<%= link_to 'Back', influences_path %>

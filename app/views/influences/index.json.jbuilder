@@ -1,0 +1,1 @@
+json.array! @influences, partial: 'influences/influence', as: :influence
