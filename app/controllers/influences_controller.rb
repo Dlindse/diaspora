@@ -69,6 +69,6 @@ class InfluencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def influence_params
-      params.require(:influence).permit(:title, :author, :pubdate, :period)
+        params.require(:influence).permit(:title, :author, :book, :pubdate, :period)
     end
 end
