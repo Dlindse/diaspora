@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225200731) do
+ActiveRecord::Schema.define(version: 20161225203229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,15 +28,6 @@ ActiveRecord::Schema.define(version: 20161225200731) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "influences", force: :cascade do |t|
-    t.string   "author"
-    t.string   "title"
-    t.string   "period"
-    t.string   "circa"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "references", force: :cascade do |t|
     t.string   "name"
     t.integer  "work_id"
@@ -44,11 +35,9 @@ ActiveRecord::Schema.define(version: 20161225200731) do
     t.string   "line"
     t.integer  "genre_id"
     t.text     "excerpt"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "influence_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_references_on_genre_id", using: :btree
-    t.index ["influence_id"], name: "index_references_on_influence_id", using: :btree
     t.index ["work_id"], name: "index_references_on_work_id", using: :btree
   end
 
@@ -64,7 +53,6 @@ ActiveRecord::Schema.define(version: 20161225200731) do
   end
 
   add_foreign_key "references", "genres"
-  add_foreign_key "references", "influences"
   add_foreign_key "references", "works"
   add_foreign_key "works", "authors"
 end
