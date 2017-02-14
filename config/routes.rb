@@ -13,5 +13,9 @@ Rails.application.routes.draw do
   
   get '/flare', to: 'pages#flare'
   
+  get '/genre_count', to: 'pages#genre_count'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ 
+  get '/ref_work', to: 'pages#ref_work'
+
 end
