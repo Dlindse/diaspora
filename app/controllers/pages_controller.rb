@@ -92,10 +92,59 @@ def ref_work
      
      render json: @wa
   
-
-    
     end
 
 
+
+def stacked
+    
+    @stk = Array.new
+    
+    @auts = Author.all
+    
+    @arr2 = Array.new
+
+    @auts.each do |at|
+
+
+    
+    #make an array and
+    @arr = Hash["author" => at.name, "Greek Mythology" => 0, "Greek Toponym" => 0, "Roman Mythology" => 0, "Roman Toponym" => 0, "Literary Reference" =>0 ]
+    
+    at.works.each do |wk|
+    
   
+    wk.references.each do |s|
+        
+        #add array elements like combinign two bubbles
+        
+        if s.genre.name == "Greek Mythology"
+        @arr ["Greek Mythology"] += 1
+        elsif s.genre.name == "Greek Toponym"
+        @arr ["Greek Toponym"] += 1
+        elsif s.genre.name == "Roman Mythology"
+        @arr ["Roman Mythology"] += 1
+        elsif s.genre.name == "Roman Toponym"
+        @arr ["Roman Toponym"] += 1
+        elsif s.genre.name == "Literary Reference"
+        @arr ["Literary Reference"] += 1
+        end
+    
+    end
+    
+    
+    
+    end
+
+        @arr2 << @arr
+
+    end
+
+
+        @stk = @arr2
+
+
+#render json: @stk
+end
+
 end

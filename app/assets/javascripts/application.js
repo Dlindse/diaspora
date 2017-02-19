@@ -15,4 +15,6 @@
 //= require turbolinks
 //= boostrap-sprockets
 //= require d3
+//= require bar
+//= require bubble
 //= require_tree .

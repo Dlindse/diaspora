@@ -1,0 +1,12 @@
+csv << ['Author', 'Greek Mythology', 'Greek Toponym', 'Roman Mythology', 'Roman Toponym', 'Literary Reference']
+
+@stk.each do |h|
+csv << [
+h['author'],
+h['Greek Mythology'],
+h['Greek Toponym'],
+h['Roman Mythology'],
+h['Roman Toponym'],
+h['Literary Reference']
+]
+end

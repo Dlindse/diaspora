@@ -18,4 +18,6 @@ Rails.application.routes.draw do
  
   get '/ref_work', to: 'pages#ref_work'
 
+get '/stacked', to: 'pages#stacked'
+
 end
