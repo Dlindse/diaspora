@@ -1,5 +1,11 @@
 class PagesController < ApplicationController
   def home
+      @authors = Author.all.count
+      @works = Work.all.count
+      @references = Reference.all.count
+      
+      
+      
   end
 
   def about
@@ -109,7 +115,7 @@ def stacked
 
     
     #make an array and
-    @arr = Hash["author" => at.name, "Greek Mythology" => 0, "Greek Toponym" => 0, "Roman Mythology" => 0, "Roman Toponym" => 0, "Literary Reference" =>0 ]
+    @arr = Hash["author" => at.name, "Greek Mythology" => 0, "Greek Toponym" => 0, "Roman Mythology" => 0, "Roman Toponym" => 0, "Literary Reference" => 0 ]
     
     at.works.each do |wk|
     

@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Diaspora</title>
+    <title>Classics Diasporic Reference Database </title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="#">Classics Diasporic Reference Database</a>
+<p class="navbar-text"> Beta | In development </p>
+</div>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#">Authors</a></li>
+<li><a href="#">About</a></li>
+</ul>
+</div>
+</nav>
+
+</head>
 
   <body>
+<div class= "container">
     <%= yield %>
+</div>
   </body>
 </html>

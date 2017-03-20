@@ -1,24 +1,44 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-<div class="container">
-<div class="navbar-header">
-<a class="navbar-brand" href="#">Classics Reference Database</a>
-<p class="navbar-text"> Beta | In development </p>
-</div>
-<ul class="nav navbar-nav navbar-right">
-<li><a href="#">Authors</a></li>
-<li><a href="#">About</a></li>
-</ul>
-</div>
-</nav>
 
-<div class="container">
+
+
+
+<div class="row">
+
+<div class="col-sm-6">
+
+<blockquote>
+<p class="lead">
+<h3>The Classics Diasporic Reference Database </h3> is a growing catalogue of references that aims to illuminate the long history of engagement with classicsm on the part of black american women authors from Phyllis Wheatley to Toni Morrison.
+
+</p>
+</blockquote>
+
+</div>
+
+<div class="col-sm-6">
+<blockquote>
+<p>
+<h3> In this database: </h>
+
+<h3> <%= @authors %></h3> Authors
+<h3> <%= @works %></h3> Works
+<h3> <%= @references %></h3> References
+</p>
+</blockquote>
+</div>
+
+
+</div>
+<hr>
+
+
 
 <div class= "row">
 
 <div class="col-xs-12">
 <br>
 <br>
-<h3> Reference Type by Author </h3>
+<h3> Reference Type X Author </h3>
 <svg id="stacked" width="960" height="960"></svg>
 
 </div>
@@ -62,7 +82,7 @@
 
 </div>
 
-</div>
+
 
 <script>
 var svg = d3.select("#hbar"),
