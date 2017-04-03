@@ -12,4 +12,5 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( grayscale/manifest.css )
 Rails.application.config.assets.precompile += %w( grayscale/manifest.js )
+Rails.application.config.assets.precompile += %w( grayscale/jquery.easing.min.js )
 Rails.application.config.assets.precompile += %w( d3/d3.js )
