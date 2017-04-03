@@ -11,10 +11,8 @@
 // about supported directives.
 //
 //= require turbolinks
-//= boostrap-sprockets
 //= require jquery
 //= require jquery_ujs
+//= boostrap
 //= require d3
-//= require bar
-//= require bubble
 //= require_tree .

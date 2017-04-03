@@ -83,22 +83,7 @@ def genre_count
     end
 
 
-def ref_work
-    
-    @wa = Array.new
-    @w = Work.all
-    
-     @w.each do |r|
-         
-         @wa <<{"name"=> r.title, "author" => r.author.name, "value" => r.references.count}
-         
-         end
-     
-     @wa
-     
-     render json: @wa
-  
-    end
+
 
 
 
