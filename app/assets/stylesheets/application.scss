@@ -78,7 +78,9 @@ color: #000;
 }
 ::-webkit-scrollbar-button       {}
 ::-webkit-scrollbar-track        {}
-::-webkit-scrollbar-track-piece  {}
+::-webkit-scrollbar-track-piece  {
+background-color: #000;
+}
 ::-webkit-scrollbar-thumb        {}
 ::-webkit-scrollbar-corner       {}
 ::-webkit-resizer                {}

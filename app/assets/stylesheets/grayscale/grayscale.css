@@ -147,7 +147,6 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url('/assets/grayscale/intro-bg.jpg') no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -206,6 +205,14 @@ a:focus {
 }
 
 .btn-circle i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
     -webkit-transition-property: -webkit-transform;
     -webkit-transition-duration: 1s;
     -moz-transition-property: -moz-transform;
@@ -258,11 +265,11 @@ a:focus {
 }
 
 .content-section {
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 .download-section {
-    padding: 50px 50px;
+    padding: 75px 75px;
     color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -283,7 +290,7 @@ a:focus {
     }
 
     .download-section {
-        padding: 50px 50px;
+        padding: 75px 75px;
     }
 
     #map {
@@ -462,4 +469,18 @@ g legend text{
     overflow-y: scroll;
 }
 
+
+
+::-webkit-scrollbar              {
+    color: #000;
+    
+}
+::-webkit-scrollbar-button       {}
+::-webkit-scrollbar-track        {}
+::-webkit-scrollbar-track-piece  {
+    background-color: #000;
+}
+::-webkit-scrollbar-thumb        {}
+::-webkit-scrollbar-corner       {}
+::-webkit-resizer                {}
 
