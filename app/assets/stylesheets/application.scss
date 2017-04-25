@@ -71,3 +71,14 @@ border: 1px solid #6F257F;
 padding: 14px;
 text-align: center;
 }
+
+::-webkit-scrollbar              {
+color: #000;
+
+}
+::-webkit-scrollbar-button       {}
+::-webkit-scrollbar-track        {}
+::-webkit-scrollbar-track-piece  {}
+::-webkit-scrollbar-thumb        {}
+::-webkit-scrollbar-corner       {}
+::-webkit-resizer                {}
