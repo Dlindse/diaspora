@@ -14,9 +14,15 @@
 
 
 </div><!--
---><div class="col-lg-8"> </div><!--
---><div class="col-4">3.5</div><!--
---><div class="col-lg-8">4</div><!--
+--><div class="col-lg-8">
+<h3> Reference Type Ratio </h3>
+<svg id="pie" width="400" height="400"></svg>
+
+</div><!--
+--><div class="col-4"></div><!--
+--><div class="col-lg-8">
+<h3> More Graphs To Come </h3>
+</div><!--
 --><div class="col-4">5</div>
 
 
@@ -123,5 +129,53 @@ d.total = t;
 return d;
 }
 
+
+</script>
+
+
+
+
+<script>
+
+var pie_svg = d3.select("#pie"),
+pie_width = +pie_svg.attr("width"),
+pie_height = +pie_svg.attr("height"),
+pie_radius = Math.min(pie_width, pie_height) / 2,
+pie_g = pie_svg.append("g").attr("transform", "translate(" + pie_width / 2 + "," + pie_height / 2 + ")");
+
+var pie_color = d3.scaleOrdinal(d3.schemeCategory20b);
+
+var pie = d3.pie()
+.sort(null)
+.value(function(d) { return d.value; });
+
+var pie_path = d3.arc()
+.outerRadius(pie_radius - 10)
+.innerRadius(0);
+
+var pie_label = d3.arc()
+.outerRadius(pie_radius - 40)
+.innerRadius(pie_radius - 40);
+
+d3.csv("genre_count.csv", function(d) {
+d.value = +d.value;
+return d;
+}, function(error, data) {
+if (error) throw error;
+
+var pie_arc = pie_g.selectAll(".arc")
+.data(pie(data))
+.enter().append("g")
+.attr("class", "arc");
+
+pie_arc.append("path")
+.attr("d", pie_path)
+.attr("fill", function(d) { return pie_color(d.data.name); });
+
+pie_arc.outerRadius.append("text")
+.attr("transform", function(d) { return "translate(" + pie_label.centroid(d) + ")"; })
+.attr("dy", "0.35em")
+.text(function(d) { return d.data.name; });
+});
 
 </script>

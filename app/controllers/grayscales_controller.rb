@@ -79,14 +79,14 @@ end
 
 def genre_count
     
-    
+    @pie = Hash.new
     @gg = Array.new
     @genres = Genre.all
     
     
     @genres.each do |g|
         
-        @gg << {"name" => g.name, "value" => Reference.where(genre_id: g).count}
+        @gg << Hash["name" => g.name, "value" => Reference.where(genre_id: g).count]
         
         
     end
@@ -94,7 +94,7 @@ def genre_count
     
     @gg
     
-    render json: @gg
+    # render json: @gg
     
     
 end
@@ -154,6 +154,7 @@ def stacked
     
     #render json: @stk
 end
+
 
 
 

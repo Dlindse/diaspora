@@ -1,0 +1,8 @@
+csv << ['name', 'value']
+
+@gg.each do |g|
+csv << [
+g['name'],
+g['value']
+]
+end
