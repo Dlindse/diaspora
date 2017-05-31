@@ -20,6 +20,8 @@ Rails.application.routes.draw do
  
   get '/ref_work', to: 'grayscales#ref_work'
 
-get '/stacked', to: 'grayscales#stacked'
+  get '/stacked', to: 'grayscales#stacked'
+
+  post '/nav', to: 'grayscales#nav'
 
 end

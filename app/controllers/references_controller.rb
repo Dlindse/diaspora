@@ -1,15 +1,21 @@
 class ReferencesController < ApplicationController
-  before_action :set_reference, only: [:show, :edit, :update, :destroy]
+    before_action :set_reference, only: [:nav, :show, :edit, :update, :destroy]
+    require 'wikipedia'
 
   # GET /references
   # GET /references.json
   def index
     @references = Reference.all
   end
-
-  # GET /references/1
+  
+    # GET /references/1
   # GET /references/1.json
   def show
+      
+      @show = Reference.find(params[:id])
+      @page = Wikipedia.find(@show.name)
+      
+      
   end
 
   # GET /references/new
@@ -64,7 +70,7 @@ class ReferencesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reference
-      @reference = Reference.find(params[:id])
+    @reference = Reference.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

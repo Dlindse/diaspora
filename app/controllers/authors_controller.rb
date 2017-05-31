@@ -10,6 +10,46 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+      @author= Author.find(params[:id])
+      @aa = Array.new
+      @array = Array.new
+      
+      @author.works.each do |work|
+          
+          @array2 = Array.new
+          
+            work.references.each do |r|
+                
+                @array2 << {"name"=> r.name, "size"=> 1}
+                
+                @array3 = Array.new
+                
+                end
+            
+            @array3 = @array2.group_by{|ref| ref["name"]}.map do |ref,ref_values|
+                {"name" => ref,
+                    #combine all the quantities into an array and reduce using `+`
+                    "size" => ref_values.map{|h| h["size"]}.reduce(:+)
+                }
+                
+            end
+            
+             @array << {"name" => work.title, "children" => @array3}
+             
+             end
+      
+      @aa << {"name"=> @author.name, "children"=> @array}
+      
+      
+  
+  @c_pack = @aa.to_json
+  
+  
+  respond_to do |format|
+  format.html
+  format.json { render json: @c_pack }
+end
+
   end
 
   # GET /authors/new
@@ -60,6 +100,9 @@ class AuthorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

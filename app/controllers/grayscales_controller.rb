@@ -9,6 +9,26 @@ class GrayscalesController < ApplicationController
         
     end
 
+
+def nav
+    @data = params[:data]
+    
+    @nav = Reference.where(name: @data).first
+    
+   
+    
+    respond_to do |format|
+        format.json { render html: reference_path(@nav.id) }
+        format.html {redirect_to @nav }
+        
+        
+    
+    end
+    
+end
+
+
+
 def ref_work
     
     @wa = Array.new
@@ -56,9 +76,20 @@ def flare
                 {"name" => ref,
                     #combine all the quantities into an array and reduce using `+`
                     "size" => ref_values.map{|h| h["size"]}.reduce(:+)
+                
                 }
                 
             end
+            
+            @array3.each do |h|
+                
+                @n = h["name"]
+                @found_id = Reference.where(name: @n).ids.first
+              
+                
+                h[:url] = reference_path(@found_id)
+                
+                end
             
             @array << {"name" => work.title, "children" => @array3}
             

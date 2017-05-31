@@ -25,6 +25,8 @@
 </section>
 
 <script>
+var current = window.location;
+console.log(jQuery.type(current));
 
 var diameter = 600,
 format = d3.format(",d"),
@@ -54,7 +56,8 @@ var node = container_bubble.selectAll(".node")
 .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
 node.append("title")
-.text(function(d) { return d.data.className + ": " + format(d.value); });
+.text(function(d){return d.data.className + ": " + format(d.value);});
+
 
 node.append("circle")
 .attr("r", function(d) { return d.r; })
@@ -62,10 +65,48 @@ node.append("circle")
 return color(d.data.packageName);
 });
 
+
+
+
 node.append("text")
 .attr("dy", ".3em")
 .style("text-anchor", "middle")
-.text(function(d) { return d.data.className.substring(0, d.r / 3); });
+.text(function(d) { return d.data.className.substring(0, d.r / 3); })
+
+
+node.each(function(){
+node.on("click", function(){
+var single = d3.select(this);
+var text = single.text();
+var name = text.split(":",1);
+var data = name[0]
+console.log(name[0]);
+
+
+$.ajax( {
+url: '/nav',
+type: 'POST',
+data: {data: data},
+dataType: 'text',
+success: function(data) {
+var loc = data.slice(1)
+window.location = current + loc
+},
+error: function() {
+console.log("Ajax error!")
+}
+});
+
+
+
+});
+});
+
+
+
+
+
+
 });
 
 // Returns a flattened hierarchy containing all leaf nodes under the root.

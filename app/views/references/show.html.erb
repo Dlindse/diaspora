@@ -1,36 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
+<div class="col-md-8">
 <p>
-  <strong>Name:</strong>
+  <strong>
   <%= @reference.name %>
+  </strong>
 </p>
 
-<p>
-  <strong>Work:</strong>
-  <%= @reference.work %>
-</p>
+<%= @paths %>
+<%= @page.text %>
 
-<p>
-  <strong>Page:</strong>
-  <%= @reference.page %>
-</p>
-
-<p>
-  <strong>Line:</strong>
-  <%= @reference.line %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @reference.genre %>
-</p>
-
-<p>
-  <strong>Excerpt:</strong>
-  <%= @reference.excerpt %>
-</p>
+</div>
 
 
-<%= link_to 'Edit', edit_reference_path(@reference) %> |
-<%= link_to 'Back', references_path %> |
-<%= link_to 'New Reference', new_reference_path %><br>
+<%#= link_to 'Edit', edit_reference_path(@reference) %>
+<%#= link_to 'Back', references_path %>
+<%#= link_to 'New Reference', new_reference_path %><br>
+
+</div>
